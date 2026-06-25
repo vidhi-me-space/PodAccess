@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-500: #14b8a6;
+    --brand-400: #2dd4bf;
+    --brand-600: #0d9488;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-surface-950 dark:text-slate-100;
+  }
+
+  ::selection {
+    @apply bg-pod-500/40 text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm transition-colors duration-300 dark:border-slate-700/50 dark:bg-slate-900/60 dark:backdrop-blur-xl dark:shadow-none;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[var(--brand-500)] to-[var(--brand-600)] px-6 py-3 font-semibold text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50;
+    box-shadow: 0 10px 15px -3px rgba(var(--brand-rgb), 0.25);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2 font-medium text-slate-700 transition-all hover:border-slate-400 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:bg-slate-700/80;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 transition-colors focus:outline-none dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-100 dark:placeholder-slate-500;
+    &:focus {
+      border-color: var(--brand-500);
+      box-shadow: 0 0 0 2px rgba(var(--brand-rgb), 0.3);
+    }
+  }
+
+  .tab-active {
+    @apply border-b-2 border-[var(--brand-500)] text-[var(--brand-500)] dark:border-[var(--brand-400)] dark:text-[var(--brand-400)];
+  }
+
+  .tab-inactive {
+    @apply border-b-2 border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200;
+  }
+
+  .highlight-match {
+    @apply rounded bg-yellow-400/30 px-0.5 text-yellow-200 ring-1 ring-yellow-400/50;
+  }
+
+  .loading-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(30, 41, 59, 0.4) 25%,
+      rgba(51, 65, 85, 0.6) 50%,
+      rgba(30, 41, 59, 0.4) 75%
+    );
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

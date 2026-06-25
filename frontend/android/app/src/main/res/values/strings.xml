@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PodAccess</string>
+    <string name="title_activity_main">PodAccess</string>
+    <string name="package_name">com.podaccess.app</string>
+    <string name="custom_url_scheme">com.podaccess.app</string>
+</resources>
